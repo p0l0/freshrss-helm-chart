@@ -37,12 +37,13 @@ jobs:
         run: |
           helm package .
           echo "release-file=$(ls -1 freshrss-*.tgz)" >> $GITHUB_OUTPUT
-      
+          echo "release-file=$(ls -1 freshrss-*.tgz)" >> $GITHUB_ENV
+
       - name: Cache package
         uses: actions/cache@v3
         with:
-          key: ${{env.GITHUB_BASE_REF}}
-          path: ${{needs.build.outputs.release-file}}
+          key: ${{env.release-file}}
+          path: ${{env.release-file}}
 
   release:
     runs-on: ubuntu-latest
@@ -51,8 +52,9 @@ jobs:
       - name: Cache package
         uses: actions/cache@v3
         with:
-          key: ${{env.GITHUB_BASE_REF}}
-          path: ${{needs.build.outputs.release-file}}
+          key: ${{needs.build.outputs.release-file}}
+          path: |
+            ${{needs.build.outputs.release-file}}
 
       - name: Release
         uses: softprops/action-gh-release@v1
@@ -89,8 +91,9 @@ jobs:
       - name: Cache package
         uses: actions/cache@v3
         with:
-          key: ${{env.GITHUB_BASE_REF}}
-          path: ${{needs.build.outputs.release-file}}
+          key: ${{needs.build.outputs.release-file}}
+          path: |
+            ${{needs.build.outputs.release-file}}
 
       - name: Update Helm index.yaml
         run: |
