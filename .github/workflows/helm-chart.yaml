@@ -3,7 +3,7 @@ run-name: Update Helm Chart resopitory
 
 on:
   release:
-    types: [published]
+    types: [created]
 
 # Allow one concurrent deployment
 concurrency:
