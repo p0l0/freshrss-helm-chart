@@ -7,7 +7,7 @@ entries:
           description: Upgraded to FreshRSS 1.20.2
     apiVersion: v2
     appVersion: 1.20.2
-    created: "2022-12-21T09:40:25.848922916Z"
+    created: "2022-12-21T09:41:29.756314164Z"
     dependencies:
     - name: common
       repository: https://library-charts.k8s-at-home.com
@@ -30,4 +30,4 @@ entries:
     urls:
     - http://freshrss-helm.binware.dev/freshrss-6.4.5.tgz
     version: 6.4.5
-generated: "2022-12-21T09:40:25.845166933Z"
+generated: "2022-12-21T09:41:29.752648165Z"
