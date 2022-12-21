@@ -46,7 +46,7 @@ jobs:
         uses: actions/cache@v3
         with:
           path: |
-            ${{env.release-file}}
+            $GITHUB_WORKSPACE/${{env.release-file}}
 
   release:
     runs-on: ubuntu-latest
@@ -56,13 +56,13 @@ jobs:
         uses: actions/cache@v3
         with:
           path: |
-            ${{needs.build.outputs.release-file}}
+            $GITHUB_WORKSPACE/${{needs.build.outputs.release-file}}
 
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
-          files: ${{needs.build.outputs.release-file}}
+          files: $GITHUB_WORKSPACE/${{needs.build.outputs.release-file}}
 
   deploy-chart:
     # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
@@ -91,7 +91,7 @@ jobs:
         uses: actions/cache@v3
         with:
           path: |
-            ${{needs.build.outputs.release-file}}
+            $GITHUB_WORKSPACE/${{needs.build.outputs.release-file}}
 
       - name: Update Helm index.yaml
         run: |
