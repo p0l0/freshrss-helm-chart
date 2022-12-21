@@ -1,6 +1,5 @@
 name: helm-chart-update
 run-name: Update Helm Chart resopitory
-
 on:
   release:
     types: [published]
@@ -22,12 +21,21 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    needs: build
     steps:
       - name: Download a single artifact
         uses: actions/download-artifact@v3
         with:
           name: helm-chart-repository
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          # Upload helm-chart directory
+          path: './helm-chart'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
+
+
 #      - name: Parse version number
 #        run: |
 #          echo $GITHUB_REF
@@ -68,11 +76,3 @@ jobs:
 #          git push
 #      - name: Setup Pages
 #        uses: actions/configure-pages@v2
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
-        with:
-          # Upload helm-chart directory
-          path: './helm-chart'
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v1
