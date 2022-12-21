@@ -1,0 +1,25 @@
+apiVersion: v2
+appVersion: 1.20.2
+dependencies:
+- name: common
+  repository: https://library-charts.k8s-at-home.com
+  version: 4.5.2
+description: FreshRSS is a self-hosted RSS feed aggregator
+home: https://github.com/p0l0/freshrss-helm-chart/tree/main
+icon: https://avatars.githubusercontent.com/u/9414285?s=200&v=4
+keywords:
+- freshrss
+- rss
+kubeVersion: '>=1.16.0-0'
+maintainers:
+- url: https://github.com/p0l0
+  name: p0l0
+name: freshrss
+sources:
+- https://github.com/FreshRSS/FreshRSS
+- https://hub.docker.com/r/linuxserver/freshrss
+version: 6.4.5
+annotations:
+  artifacthub.io/changes: |
+    - kind: changed
+      description: Upgraded to FreshRSS 1.20.2
