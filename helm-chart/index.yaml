@@ -7,13 +7,13 @@ entries:
           description: Upgraded to FreshRSS 1.20.2
     apiVersion: v2
     appVersion: 1.20.2
-    created: "2022-12-21T09:12:00.58327+01:00"
+    created: "2022-12-21T09:39:20.160707415Z"
     dependencies:
     - name: common
       repository: https://library-charts.k8s-at-home.com
       version: 4.5.2
     description: FreshRSS is a self-hosted RSS feed aggregator
-    digest: 6859fb8c79d6a4f7fc68f743b729353507921f94f7ceb509286341586e0a9e39
+    digest: 07cd037436364745936e2e7b784777ad470e7fdd2789573315b1919b4b2a18d4
     home: https://github.com/p0l0/freshrss-helm-chart/tree/main
     icon: https://avatars.githubusercontent.com/u/9414285?s=200&v=4
     keywords:
@@ -30,4 +30,4 @@ entries:
     urls:
     - http://freshrss-helm.binware.dev/freshrss-6.4.5.tgz
     version: 6.4.5
-generated: "2022-12-21T09:12:00.579118+01:00"
+generated: "2022-12-21T09:39:20.156723107Z"
