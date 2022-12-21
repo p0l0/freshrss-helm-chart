@@ -15,6 +15,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GIT_PUSH_TOKEN }}
 
       - name: Setup Helm
         run: |
@@ -33,6 +35,20 @@ jobs:
           helm package .
           echo "release-file=$(ls -1 freshrss-*.tgz)" >> $GITHUB_OUTPUT
           echo "release-file=$(ls -1 freshrss-*.tgz)" >> $GITHUB_ENV
+
+      - name: Update Helm Chart repository
+        run: |
+          cp freshrss-*.tgz helm-chart/
+          cd helm-chart
+          helm repo index --url http://freshrss-helm.binware.dev/ --merge index.yaml .
+
+      - name: Archive Helm Chart repostiroy artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: helm-chart-repository
+          retention-days: 1
+          path: |
+            helm-chart
 
       - name: Cache package
         uses: actions/cache@v3
