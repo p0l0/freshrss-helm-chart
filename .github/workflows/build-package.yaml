@@ -40,12 +40,13 @@ jobs:
         run: |
           helm package .
           echo "release-file=$(ls -1 freshrss-*.tgz)" >> $GITHUB_OUTPUT
+          echo "release-file=$(ls -1 freshrss-*.tgz)" >> $GITHUB_ENV
 
       - name: Cache package
         uses: actions/cache@v3
         with:
           path: |
-            ${{needs.build.outputs.release-file}}
+            ${{env.release-file}}
 
   release:
     runs-on: ubuntu-latest
