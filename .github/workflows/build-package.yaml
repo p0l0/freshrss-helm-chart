@@ -72,3 +72,4 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/')
         with:
           files: ${{needs.build.outputs.release-file}}
+          token: ${{ secrets.GIT_PUSH_TOKEN }}
