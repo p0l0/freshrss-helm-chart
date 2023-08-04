@@ -1,6 +1,6 @@
 # freshrss
 
-![Version: 6.4.5](https://img.shields.io/badge/Version-6.4.5-informational?style=flat-square) ![AppVersion: 1.20.2](https://img.shields.io/badge/AppVersion-1.20.2-informational?style=flat-square)
+![Version: 6.4.6](https://img.shields.io/badge/Version-6.4.6-informational?style=flat-square) ![AppVersion: 1.21.0](https://img.shields.io/badge/AppVersion-1.21.0-informational?style=flat-square)
 
 FreshRSS is a self-hosted RSS feed aggregator
 
@@ -82,14 +82,14 @@ N/A
 | env.TZ | string | `"UTC"` | Set the container timezone |
 | image.pullPolicy | string | `"IfNotPresent"` | image pull policy |
 | image.repository | string | `"linuxserver/freshrss"` | image repository |
-| image.tag | string | `"version-1.20.2"` | image tag |
+| image.tag | string | `"version-1.21.0"` | image tag |
 | ingress.main | object | See values.yaml | Enable and configure ingress settings for the chart under this key. |
 | persistence | object | See values.yaml | Configure persistence settings for the chart under this key. |
 | service | object | See values.yaml | Configures service settings for the chart. |
 
 ## Changelog
 
-### Version 6.4.5
+### Version 6.4.6
 
 #### Added
 
@@ -97,7 +97,7 @@ N/A
 
 #### Changed
 
-* Upgraded to FreshRSS 1.20.2
+* Upgraded to FreshRSS 1.21.0
 
 #### Fixed
 
