@@ -4,10 +4,39 @@ entries:
   - annotations:
       artifacthub.io/changes: |-
         - kind: changed
+          description: Upgraded to FreshRSS 1.21.0
+    apiVersion: v2
+    appVersion: 1.21.0
+    created: "2023-08-04T19:06:54.55178252Z"
+    dependencies:
+    - name: common
+      repository: https://library-charts.k8s-at-home.com
+      version: 4.5.2
+    description: FreshRSS is a self-hosted RSS feed aggregator
+    digest: 1586c0d678c4fe5ba100080f447e5909046be6ebec82bfddfbb4ad6fe7ee8107
+    home: https://github.com/p0l0/freshrss-helm-chart/tree/main
+    icon: https://avatars.githubusercontent.com/u/9414285?s=200&v=4
+    keywords:
+    - freshrss
+    - rss
+    kubeVersion: '>=1.16.0-0'
+    maintainers:
+    - name: p0l0
+      url: https://github.com/p0l0
+    name: freshrss
+    sources:
+    - https://github.com/FreshRSS/FreshRSS
+    - https://hub.docker.com/r/linuxserver/freshrss
+    urls:
+    - http://freshrss-helm.binware.dev/freshrss-6.4.6.tgz
+    version: 6.4.6
+  - annotations:
+      artifacthub.io/changes: |-
+        - kind: changed
           description: Upgraded to FreshRSS 1.20.2
     apiVersion: v2
     appVersion: 1.20.2
-    created: "2022-12-22T12:39:16.12664481Z"
+    created: "2023-08-04T19:06:54.548022067Z"
     dependencies:
     - name: common
       repository: https://library-charts.k8s-at-home.com
@@ -30,4 +59,4 @@ entries:
     urls:
     - http://freshrss-helm.binware.dev/freshrss-6.4.5.tgz
     version: 6.4.5
-generated: "2022-12-22T12:39:16.120352843Z"
+generated: "2023-08-04T19:06:54.543246199Z"
